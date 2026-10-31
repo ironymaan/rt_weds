@@ -14,7 +14,7 @@ export function Gallery({ onView }: { onView: (index: number) => void }) {
               {wedding.gallery.map((photo, index) => (
                 <Button key={photo.src} variant="ghost" tabIndex={copy === 1 ? -1 : 0}
                   onClick={() => onView(index)} aria-label={`View photo: ${photo.alt}`}
-                  className="gallery-photo group h-auto rounded-none p-0">
+                  className={`gallery-photo ${photo.w > photo.h ? "gallery-photo--wide" : ""} group h-auto rounded-none p-0`}>
                   <img src={photo.src} alt={copy === 1 ? "" : photo.alt} width={photo.w} height={photo.h}
                     loading="lazy" className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.02]" />
                 </Button>
