@@ -123,7 +123,7 @@ function Opening({ onOpen }: { onOpen: () => void }) {
                     <path d="M14 30 C22 42 34 47 46 46 C38 38 26 33 14 30 Z" />
                     <path d="M86 30 C78 42 66 47 54 46 C62 38 74 33 86 30 Z" />
                   </svg>
-                  <span className="mt-1 font-serif text-lg tracking-wide text-primary-foreground">A&amp;R</span>
+                  <span className="mt-1 font-serif text-lg tracking-wide text-primary-foreground">{wedding.groom[0]}&amp;{wedding.bride[0]}</span>
                 </span>
                 <span aria-hidden className="absolute inset-0 -translate-x-full bg-gradient-to-tr from-transparent via-primary-foreground/15 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
               </span>
@@ -277,7 +277,7 @@ function Index() {
 
         {/* Events */}
         <Section id="events" eyebrow="Celebration details" heading="The Festivities">
-          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
             {wedding.events.map((ev, i) => {
               const d = fmtDate(ev.date);
               return (
@@ -311,15 +311,15 @@ function Index() {
         </section>
 
         {/* Venues */}
-        <Section id="venue" eyebrow="Where we gather" heading="The Venues" className="bg-secondary/50">
-          <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2">
+        <Section id="venue" eyebrow="Where we gather" heading={wedding.venues.length === 1 ? "The Venue" : "The Venues"} className="bg-secondary/50">
+          <div className={wedding.venues.length === 1 ? "mx-auto max-w-6xl" : "mx-auto grid max-w-5xl gap-10 md:grid-cols-2"}>
             {wedding.venues.map((v) => (
-              <article key={v.name} className="reveal group">
-                <div className="overflow-hidden"><img src={v.image} alt={v.name} loading="lazy" width={1024} height={768} className="aspect-[4/3] w-full object-cover transition-transform duration-1000 group-hover:scale-105" /></div>
+              <article key={v.name} className={wedding.venues.length === 1 ? "reveal group text-center" : "reveal group"}>
+                <div className="overflow-hidden"><img src={v.image} alt={v.name} loading="lazy" width={1024} height={768} className={`${wedding.venues.length === 1 ? "aspect-[4/3] md:aspect-[16/10]" : "aspect-[4/3]"} w-full object-cover transition-transform duration-1000 group-hover:scale-105`} /></div>
                 <p className="eyebrow mt-6">{v.city}</p>
-                <h3 className="mt-2 text-3xl text-wine">{v.name}</h3>
+                <h3 className={`mt-2 text-wine ${wedding.venues.length === 1 ? "text-4xl md:text-5xl" : "text-3xl"}`}>{v.name}</h3>
                 <p className="mt-2 text-sm">{v.address}</p>
-                <p className="mt-3 text-muted-foreground">{v.description}</p>
+                <p className={`mt-3 text-muted-foreground ${wedding.venues.length === 1 ? "mx-auto max-w-2xl text-lg" : ""}`}>{v.description}</p>
                 <a href={mapsUrl(v.mapsQuery)} target="_blank" rel="noopener noreferrer"
                   className="mt-5 inline-flex min-h-11 items-center gap-2 border border-wine px-6 text-xs uppercase tracking-[0.3em] text-wine transition-colors hover:bg-wine hover:text-primary-foreground">
                   <MapPin className="h-4 w-4" /> Get Directions
