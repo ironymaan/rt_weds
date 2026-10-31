@@ -34,7 +34,7 @@ export const wedding = {
   // Ceremony start, India time
   dateTimeISO: "2026-11-24T19:00:00+05:30",
   dateLabel: "24 November 2026",
-  rsvpBy: "14 November 2026", // last date shown above the RSVP form
+  rsvpBy: "10 November 2026", // last date shown above the RSVP form
   city: "Kanpur",
   invitePhrase: "You're Invited",
   inviteLine:
