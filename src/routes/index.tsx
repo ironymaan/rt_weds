@@ -356,7 +356,7 @@ function Index() {
 
         {/* RSVP */}
         <Section id="rsvp" eyebrow="Kindly respond" heading="RSVP" className="bg-secondary/50">
-          <p className="reveal mx-auto -mt-6 mb-10 max-w-md text-center font-serif text-lg italic text-muted-foreground">Please let us know by 30 October 2026.</p>
+          <p className="reveal mx-auto -mt-6 mb-10 max-w-md text-center font-serif text-lg italic text-muted-foreground">Please let us know by {wedding.rsvpBy}.</p>
           <div className="reveal"><Rsvp /></div>
         </Section>
 
