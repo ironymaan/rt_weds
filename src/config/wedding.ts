@@ -1,9 +1,12 @@
 // Central wedding configuration — edit everything here.
 import venuePhoto from "@/Venue.jpg";
-import pOne from "@/file.jpeg";
-import pTwo from "@/filq.JPG";
-import pThree from "@/filr.jpeg";
-import pFour from "@/filw.jpeg";
+import photo1 from "@/file_1.JPG";
+import photo2 from "@/file_2.jpeg";
+import photo3 from "@/file_3.jpeg";
+import photo4 from "@/file_4.JPG";
+import photo5 from "@/file_5.JPG";
+import photo6 from "@/file_6.jpeg";
+import photo7 from "@/file_7.JPG";
 import pMusic from "@/Milan_The_Wedding_Song_Deepak Adhikari.mp3";
 
 export type WeddingEvent = {
@@ -31,6 +34,7 @@ export const wedding = {
   // Ceremony start, India time
   dateTimeISO: "2026-11-24T19:00:00+05:30",
   dateLabel: "24 November 2026",
+  rsvpBy: "14 November 2026", // last date shown above the RSVP form
   city: "Kanpur",
   invitePhrase: "You're Invited",
   inviteLine:
@@ -40,8 +44,8 @@ export const wedding = {
   quoteSub: "Your presence is the only gift we ask for.",
   countdownDoneMessage: "Today, we celebrate love.",
   families: {
-    bride: { title: "The Bride's Family", parents: "Chhaya Awasthi & Rajni Kant Awasthi", note: "Daughter of" },
-    groom: { title: "The Groom's Family", parents: "Sarika Tripathi & Shri Padmesh Chandra Tripathi", note: "Son of" },
+    bride: { title: "The Bride's Family", parents: "Shri Rajni Kant Awasthi & Smt. Chhaya Awasthi", note: "Daughter of" },
+    groom: { title: "The Groom's Family", parents: "Shri Padmesh Chandra Tripathi & Smt. Sarika Tripathi", note: "Son of" },
   },
   events: [
     { id: "haldi", name: "Haldi", date: "2026-11-23", start: "11:00 AM", end: "onwards", ...venue,
@@ -49,7 +53,7 @@ export const wedding = {
     { id: "sangeet", name: "Sangeet", date: "2026-11-23", start: "8:00 PM", end: "onwards", ...venue,
       description: "An evening of song, dance and family performances.", dressCode: "Glittery & Indo-western" },
     { id: "tilak", name: "Tilak", date: "2026-11-24", start: "12:00 PM", end: "onwards", ...venue,
-      description: "A traditional ceremony to welcome the groom's family with blessings.", dressCode: "Traditional Indian" },
+      description: "A traditional ceremony of tilak and blessings, marking the union of our two families.", dressCode: "Traditional Indian" },
     { id: "wedding", name: "Baraat & Wedding", date: "2026-11-24", start: "7:00 PM", end: "onwards", ...venue,
       description: "The baraat, the sacred pheras, and dinner under the stars.", dressCode: "Traditional Indian" },
   ] as WeddingEvent[],
@@ -58,10 +62,13 @@ export const wedding = {
       description: "Home to all our celebrations: Haldi, Sangeet, Tilak, Baraat and the Wedding.", image: venuePhoto },
   ],
   gallery: [
-    { src: pOne, alt: "Rohit and Sunakshi together", w: 1200, h: 1600 },   // portrait
-    { src: pThree, alt: "Rohit and Sunakshi together", w: 1600, h: 1200 }, // landscape
-    { src: pFour, alt: "Rohit and Sunakshi together", w: 1200, h: 1600 },  // portrait
-    { src: pTwo, alt: "Rohit and Sunakshi by the pool", w: 1600, h: 1200 }, // landscape
+    { src: photo1, alt: "Rohit and Sunakshi together", w: 2400, h: 1600 }, // landscape
+    { src: photo2, alt: "Rohit and Sunakshi together", w: 1600, h: 1278 }, // landscape
+    { src: photo3, alt: "Rohit and Sunakshi together", w: 1066, h: 1600 }, // portrait
+    { src: photo4, alt: "Rohit and Sunakshi together", w: 2400, h: 1600 }, // landscape
+    { src: photo5, alt: "Rohit and Sunakshi together", w: 2400, h: 1600 }, // landscape
+    { src: photo6, alt: "Rohit and Sunakshi together", w: 960, h: 1280 },  // portrait
+    { src: photo7, alt: "Rohit and Sunakshi together", w: 2400, h: 1600 }, // landscape
   ],
   shareMessage:
     "We're delighted to invite you to celebrate the wedding of Rohit & Sunakshi on 24 November 2026 in Kanpur. Please join us ❤️",
